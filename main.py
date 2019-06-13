@@ -47,6 +47,5 @@ def main():
 
 	print "\nHave a nice day!"
 	
-	
 if __name__ == '__main__':
 	main()

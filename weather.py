@@ -49,7 +49,7 @@ class Weather:
 			j = json_data["main"]
 			current_temp = int( j['temp'] )
 			self.zipsToTemps[current_temp] = self.zipCode
-			print "The current temperature in "+ self.zipCode + " is " + str(current_temp) +" degrees Fahrenheit."
+			print "\nThe current temperature in "+ self.zipCode + " is " + str(current_temp) +" degrees Fahrenheit.\n"
 			return 1
 		except Exception as e:
 			print str(e) + ", Please try again."
@@ -70,7 +70,7 @@ class Weather:
 		self.runCount += 1
 		while True:
 			try:
-				self.zipCode = raw_input("Please enter a five digit zip code to get the forecast\n")
+				self.zipCode = raw_input("\nPlease enter a five digit zip code to get the forecast.\n")
 				if len(self.zipCode) != 5: raise ValueError("invalid length")
 				else: zipCodeInt = int(self.zipCode)
 			except Exception :
@@ -91,4 +91,3 @@ class Weather:
 		self.zipsToTemps = {}
 		self.zipCode = ''
 		self.runCount = 0
-		

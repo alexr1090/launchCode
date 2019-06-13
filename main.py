@@ -17,7 +17,7 @@ def main():
 	while currentChoice != 3:
 		while 1:
 			try:
-				currentChoice = int(raw_input("Please enter 1 for weather, 2 for the guessing game or 3 to exit. "))
+				currentChoice = int(raw_input("\nPlease enter 1 for weather, 2 for the guessing game or 3 to exit. "))
 				if currentChoice == 1:weatherCheck.run()
 				elif currentChoice == 2: guessingGame.run()
 				elif currentChoice == 3: break

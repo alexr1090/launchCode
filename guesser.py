@@ -1,13 +1,11 @@
 #!/usr/bin/env python
 import random
-#
-# Python guessing game
-# Generates random number betwen 1 and 100 and 
-# user to guess number. Will tell user if their guess
-# is too high or too low or correct and then ask if
-# they want to play again
-# 
-# uses variables
+"""
+Guesser class is made to be a guessing game. It generates 
+a random number between 1 and 100 in run and the user
+guesses these in _guessing. It has variables runCount,
+bestGame, secrets, and allGuesses for statistical purposes
+"""
 class Guesser:
 	def getRunCount(self):
 		return self.runCount
@@ -48,7 +46,7 @@ class Guesser:
 			try:	
 				again = str(raw_input("Would you like to play again (y\\n)?").lower())
 				if again != "n" and again != "y":
-					raise ValueError("Incorrect")
+					raise ValueError("Invalid")
 				elif again == 'y': 
 					return True
 				else: 
@@ -86,16 +84,15 @@ class Guesser:
 
 	def __init__(self):
 		'''
-		allGuesses is a list of lists that contains where
-		each list inside contains the guesses someone made
-		for a particular game.
+		allGuesses is a list that will contain more lists. The lists
+		it contain have the guesses the user made for each game. 
 
-		secrets is a list of ints that keeps track of all the random numbers generated
-		best game keeps track of the best game by least number of guesses to win
+		secrets is a list of ints that keeps track of all the random [secret] numbers
+		generated for every game. runCount is an int that keeps track of how many games
+		have been played. Best game keeps track of the best game by least number of guesses to win
 		'''
 		self.allGuesses = []
 		self.secrets= []
 		self.runCount = 0
 		self.bestGame = 0
 		
-

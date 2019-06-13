@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-main.py imports weather and guesser programs. It displays a menu
+main.py imports weather and guesser classes. It displays a menu
 asking user which they would like to do and error checks
 and runs the correct program until user exits. Upon exiting it 
 will display some statistics about the usage.

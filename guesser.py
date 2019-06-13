@@ -27,8 +27,8 @@ class Guesser:
 		"""
 		gameGuesses= [str(guess)]
 		while guess != number:
-			if guess > number:	print "Sorry that is incorrect. The correct number is less than your guess."
-			else: print "Sorry that is incorrect. The correct number is greater than your guess."
+			if guess > number:	print "\nSorry that is incorrect. The correct number is less than your guess."
+			else: print "\nSorry that is incorrect. The correct number is greater than your guess."
 			valid = 0
 			while not valid:
 				try:
@@ -37,14 +37,14 @@ class Guesser:
 					gameGuesses.append(str(guess))
 				except ValueError:
 					print ("Invalid number.")
-		print ("Correct! It took you " + str(len(gameGuesses)) + " guess(es) to guess correctly. Your guess(es) were/was " +  ", ".join(gameGuesses))
+		print ("\nCorrect! It took you " + str(len(gameGuesses)) + " guess(es) to guess correctly. Your guess(es) were/was " +  ", ".join(gameGuesses))
 		if self.runCount == 1: self.bestGame = gameGuesses
 		elif gameGuesses < self.bestGame: self.bestGame = gameGuesses
 
 		self.allGuesses.append(gameGuesses)
 		while True:
 			try:	
-				again = str(raw_input("Would you like to play again (y\\n)?").lower())
+				again = str(raw_input("\nWould you like to play again (y\\n)?").lower())
 				if again != "n" and again != "y":
 					raise ValueError("Invalid")
 				elif again == 'y': 
@@ -63,21 +63,21 @@ class Guesser:
 		'''
 		self.runCount += 1
 		
-		print("Hello, welcome to the guessing game!")
+		print("\nHello, welcome to the guessing game!")
 		again = True
 		while again:
 			number = random.randint(1, 100)
 			self.secrets.append(number)
 			while 1:
 				try:
-					guess = int(raw_input("Please guess a number between one and one hundered. \n"))
+					guess = int(raw_input("\nPlease guess a number between one and one hundered.\n"))
 				except ValueError:
 					print ("Invalid number.")
 					continue
 				break
 			again=self._guessing(guess, number)
 
-		print "Thank you for playing. Good bye!"
+		print "\nThank you for playing. Good bye!"
 
 
 		 
@@ -95,4 +95,3 @@ class Guesser:
 		self.secrets= []
 		self.runCount = 0
 		self.bestGame = 0
-		

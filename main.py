@@ -29,7 +29,6 @@ def main():
 	
 	print "\nYou ran the weather check " + str(weatherRuns) + " time(s)."
 
-
 	if weatherRuns >= 1:
 		'''
 		get the hottest temperture and zip code

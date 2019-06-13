@@ -42,7 +42,6 @@ def main():
 		'''
 		display the best game 
 		'''
-			
 		print "In your best game it took you " + str(len(guessingGame.getBestGame()))+ " guesses to win."
 
 	print "\nHave a nice day!"

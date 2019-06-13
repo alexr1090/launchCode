@@ -2,18 +2,18 @@
 """
 main.py imports weather and guesser programs. It displays a menu
 asking user which they would like to do and error checks
-and runs the correct program until user exits
+and runs the correct program until user exits. Upon exiting it 
+will display some statistics about the usage.
 """
-import weatherCopy, guesserCopy
+import weather, guesser
 
 def main():
 	
-	guessingGame = guesserCopy.Guesser()
-	weatherCheck = weatherCopy.weather()
+	guessingGame = guesser.Guesser()
+	weatherCheck = weather.Weather()
 
 	currentChoice = 0
-	guess = 0
-	weather = 0
+	
 	while currentChoice != 3:
 		while 1:
 			try:
@@ -27,14 +27,14 @@ def main():
 
 	weatherRuns = weatherCheck.getRunCount()
 	
-	print "\nYou ran the weather check " + str(weatherRuns) + " me(s)."
+	print "\nYou ran the weather check " + str(weatherRuns) + " time(s)."
 
 
 	if weatherRuns >= 1:
 		'''
 		get the hottest temperture and zip code
 		'''
-		hottest = sorted(weatherCheck.zipsToTemps.keys())[-1]
+		hottest = sorted(weatherCheck.getZipsToTemps().keys())[-1]
 		print "The hottest temperature you searched was in " + weatherCheck.zipsToTemps[hottest] + " and it was "+ str(hottest)+" degrees Fahrenheit."
 	guessCount = guessingGame.getRunCount()
 	print "You played the guessing game " + str(guessCount) + " time(s)."
@@ -42,10 +42,8 @@ def main():
 		'''
 		display the best game 
 		'''
-		guesses = str(guessingGame.getRunCount())
-		bestCount = str(len(guessingGame.getBestGame()))
-		
-		print "In your best game it took you " + bestCount+ " guesses to win."
+			
+		print "In your best game it took you " + str(len(guessingGame.getBestGame()))+ " guesses to win."
 
 	print "\nHave a nice day!"
 	

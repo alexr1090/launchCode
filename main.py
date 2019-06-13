@@ -37,7 +37,7 @@ def main():
 		print "The hottest temperature you searched was in " + weatherCheck.zipsToTemps[hottest] + " and it was "+ str(hottest)+" degrees Fahrenheit."
 		
 	guessCount = guessingGame.getRunCount()
-	print "You played the guessing game " + str(guessCount) + " time(s)."
+	print "\nYou played the guessing game " + str(guessCount) + " time(s)."
 	if guessCount >= 1:
 		'''
 		display the best game 
